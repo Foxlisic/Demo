@@ -3,8 +3,9 @@ VC=ffmpeg -framerate 60 -r 60 -i - -vf "scale=w=1600:h=1000,pad=width=1920:heigh
 
 all: app
 	cp video.v ../video.v
-	./tb -L -V | $(VC)
-	#./tb -H -v > tb.log
+	./tb -L
+	# ./tb -L -V | $(VC)
+	# ./tb -H -v > tb.log
 
 app: syn
 	g++ -Ofast -o tb -I$(VLIB) -I.. \
