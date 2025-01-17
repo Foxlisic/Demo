@@ -17,6 +17,8 @@ app: syn
 run:
 	cp video.v ../video.v
 	./tb > tb.log
+wav:
+	gtkwave tb.gtkw
 syn:
 	verilator --threads 1 -cc video.v > /dev/null
 	cd obj_dir && make -f Vvideo.mk > /dev/null
